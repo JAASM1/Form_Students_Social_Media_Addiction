@@ -5,6 +5,27 @@ const SUPABASE_APIKEY =
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_APIKEY);
 
+// Cargar países desde el JSON
+async function loadCountries() {
+  try {
+    const response = await fetch('./data/country.json');
+    const data = await response.json();
+    const countrySelect = document.getElementById('Country');
+    
+    data.countries.forEach(country => {
+      const option = document.createElement('option');
+      option.value = country;
+      option.textContent = country;
+      countrySelect.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Error al cargar países:', error);
+  }
+}
+
+// Cargar países cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', loadCountries);
+
 // Actualizar valores de los rangesliders
 const ageSlider = document.getElementById("Age");
 const ageValue = document.getElementById("ageValue");
