@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+      defer
+    ></script>
+    <script src="./script.js" defer></script>
+    <title>Encuenta</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <p>Participa en nuestro formulario anónimo</p>
+        <h1>
+          Completa este formulario para contribuir con nuestra investigación
+        </h1>
+      </div>
+
+      <form id="formulario" class="form">
+        <!-- Edad -->
+        <div class="form-field">
+          <div class="field-label">Edad</div>
+          <div class="range-container">
+            <input
+              type="range"
+              id="Age"
+              name="Age"
+              class="range-slider"
+              min="16"
+              max="30"
+              value="20"
+              step="1"
+              required
+            />
+            <div class="range-value" id="ageValue">20 años</div>
+          </div>
+        </div>
+
+        <!-- Género -->
+        <div class="form-field">
+          <div class="field-label">Género</div>
+          <div class="icon-select">
+            <div class="select-option">
+              <input
+                type="radio"
+                id="male"
+                name="Gender"
+                value="Male"
+                required
+              />
+              <label for="male" class="select-option-label">
+                <div class="select-icon">👨</div>
+                <div class="select-text">Masculino</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="female"
+                name="Gender"
+                value="Female"
+                required
+              />
+              <label for="female" class="select-option-label">
+                <div class="select-icon">👩</div>
+                <div class="select-text">Femenino</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nivel Académico -->
+        <div class="form-field">
+          <div class="field-label">Nivel Académico</div>
+          <div class="icon-select">
+            <div class="select-option">
+              <input
+                type="radio"
+                id="highschool"
+                name="Academic_Level"
+                value="High School"
+                required
+              />
+              <label for="highschool" class="select-option-label">
+                <div class="select-icon">🎓</div>
+                <div class="select-text">Secundaria</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="undergraduate"
+                name="Academic_Level"
+                value="Undergraduate"
+                required
+              />
+              <label for="undergraduate" class="select-option-label">
+                <div class="select-icon">📚</div>
+                <div class="select-text">Licenciatura</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="graduate"
+                name="Academic_Level"
+                value="Graduate"
+                required
+              />
+              <label for="graduate" class="select-option-label">
+                <div class="select-icon">🎯</div>
+                <div class="select-text">Graduado</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- País -->
+        <div class="form-field">
+          <div class="field-label">País</div>
+          <input
+            type="text"
+            id="Country"
+            name="Country"
+            class="simple-select"
+            placeholder="Ingresa tu país"
+            required
+          />
+        </div>
+
+        <!-- Horas de uso diario -->
+        <div class="form-field">
+          <div class="field-label">Promedio de horas de uso diario</div>
+          <div class="range-container">
+            <input
+              type="range"
+              id="Avg_Daily_Usage_Hours"
+              name="Avg_Daily_Usage_Hours"
+              class="range-slider"
+              min="0"
+              max="12"
+              value="3"
+              step="0.5"
+              required
+            />
+            <div class="range-value" id="usageValue">3.0 horas</div>
+          </div>
+        </div>
+
+        <!-- Plataforma más usada -->
+        <div class="form-field">
+          <div class="field-label">Plataforma más usada</div>
+          <div class="icon-select">
+            <div class="select-option">
+              <input
+                type="radio"
+                id="facebook"
+                name="Most_Used_Platform"
+                value="Facebook"
+                required
+              />
+              <label for="facebook" class="select-option-label">
+                <img
+                  src="/assets/facebook.svg"
+                  alt="facebook"
+                  class="social-icon"
+                />
+                <div class="select-text">Facebook</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="instagram"
+                name="Most_Used_Platform"
+                value="Instagram"
+                required
+              />
+              <label for="instagram" class="select-option-label">
+                <img
+                  src="/assets/instagram.svg"
+                  alt="instagram"
+                  class="social-icon"
+                />
+                <div class="select-text">Instagram</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="tiktok"
+                name="Most_Used_Platform"
+                value="TikTok"
+                required
+              />
+              <label for="tiktok" class="select-option-label">
+                <img
+                  src="/assets/tiktok.svg"
+                  alt="tiktok"
+                  class="social-icon"
+                />
+                <div class="select-text">TikTok</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="youtube"
+                name="Most_Used_Platform"
+                value="YouTube"
+                required
+              />
+              <label for="youtube" class="select-option-label">
+                <img
+                  src="/assets/youtube.svg"
+                  alt="youtube"
+                  class="social-icon"
+                />
+                <div class="select-text">YouTube</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="twitter"
+                name="Most_Used_Platform"
+                value="Twitter"
+                required
+              />
+              <label for="twitter" class="select-option-label">
+                <img src="/assets/x.svg" alt="x" class="social-icon" />
+                <div class="select-text">Twitter</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="linkedin"
+                name="Most_Used_Platform"
+                value="LinkedIn"
+                required
+              />
+              <label for="linkedin" class="select-option-label">
+                <img
+                  src="/assets/linkedin.svg"
+                  alt="linkedin"
+                  class="social-icon"
+                />
+                <div class="select-text">LinkedIn</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="snapchat"
+                name="Most_Used_Platform"
+                value="Snapchat"
+                required
+              />
+              <label for="snapchat" class="select-option-label">
+                <img
+                  src="/assets/snapchat.svg"
+                  alt="snapchat"
+                  class="social-icon"
+                />
+                <div class="select-text">Snapchat</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horas de sueño -->
+        <div class="form-field">
+          <div class="field-label">Horas de sueño por noche</div>
+          <div class="range-container">
+            <input
+              type="range"
+              id="Sleep_Hours_Per_Night"
+              name="Sleep_Hours_Per_Night"
+              class="range-slider"
+              min="4"
+              max="12"
+              value="7"
+              step="0.5"
+              required
+            />
+            <div class="range-value" id="sleepValue">7.0 horas</div>
+          </div>
+        </div>
+
+        <!-- Salud Mental -->
+        <div class="form-field">
+          <div class="field-label">Salud mental (1-10)</div>
+          <div class="range-container">
+            <input
+              type="range"
+              id="Mental_Health_Score"
+              name="Mental_Health_Score"
+              class="range-slider"
+              min="1"
+              max="10"
+              value="5"
+              step="1"
+              required
+            />
+            <div class="range-value" id="mentalValue">5/10</div>
+          </div>
+        </div>
+
+        <!-- Estado de relación -->
+        <div class="form-field">
+          <div class="field-label">Situación sentimental</div>
+          <div class="icon-select">
+            <div class="select-option">
+              <input
+                type="radio"
+                id="single"
+                name="Relationship_Status"
+                value="Single"
+                required
+              />
+              <label for="single" class="select-option-label">
+                <div class="select-icon">😊</div>
+                <div class="select-text">Soltero</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="relationship"
+                name="Relationship_Status"
+                value="In Relationship"
+                required
+              />
+              <label for="relationship" class="select-option-label">
+                <div class="select-icon">💕</div>
+                <div class="select-text">En relación</div>
+              </label>
+            </div>
+            <div class="select-option">
+              <input
+                type="radio"
+                id="complicated"
+                name="Relationship_Status"
+                value="Complicated"
+                required
+              />
+              <label for="complicated" class="select-option-label">
+                <div class="select-icon">🤔</div>
+                <div class="select-text">Complicado</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
