@@ -45,11 +45,11 @@ sleepSlider.addEventListener("input", () => {
   sleepValue.textContent = `${parseFloat(sleepSlider.value).toFixed(1)} horas`;
 });
 
-const mentalSlider = document.getElementById("Mental_Health_Score");
-const mentalValue = document.getElementById("mentalValue");
-mentalSlider.addEventListener("input", () => {
-  mentalValue.textContent = `${mentalSlider.value}/10`;
-});
+// const mentalSlider = document.getElementById("Mental_Health_Score");
+// const mentalValue = document.getElementById("mentalValue");
+// mentalSlider.addEventListener("input", () => {
+//   mentalValue.textContent = `${mentalSlider.value}/10`;
+// });
 
 // Función para mostrar alertas personalizadas
 function showAlert(type, title, message) {
@@ -140,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ageSlider.value = 20;
         usageSlider.value = 3;
         sleepSlider.value = 7;
-        mentalSlider.value = 5;
+        // mentalSlider.value = 5;
         ageValue.textContent = "20 años";
         usageValue.textContent = "3.0 horas";
         sleepValue.textContent = "7.0 horas";
-        mentalValue.textContent = "5/10";
+        // mentalValue.textContent = "5/10";
       }
     } catch (error) {
       console.error("Error de conexión:", error);
